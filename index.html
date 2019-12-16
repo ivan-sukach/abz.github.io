@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>abz.agency</title>
+  <link rel="shortcut icon" href="img/favicon/abz-favicon-32x32.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Overpass:600|Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='css/index.css'>
+</head>
+<body>
+
+  <div id="app">
+    
+    <div style="position: relative; z-index: 10;">
+      <header class="header">
+        <div class="container">
+          <div class="header-logo">
+            <a href="/">
+              <img src="img/logo/logo.svg" alt="abz.agency">
+            </a>
+          </div>
+          <!-- /.header-logo -->
+          <ul class="header-menu">
+              <li v-for="siteMenuItem of siteMenu">
+                <a v-bind:href="'#' + siteMenuItem">{{siteMenuItem}}</a>
+              </li>
+          </ul>
+          <!-- /.header-menu -->
+          <div class="header-cabinet">
+            <div class="header-cabinet__text">
+              <div class="header-cabinet__name">{{users[1].name}}</div>
+              <div class="header-cabinet__email">{{users[1].email}}</div>
+            </div>
+            <div class="header-cabinet__photo">
+              <a :href="users[1].photo">
+                <img :src="users[1].photo" :alt="users[1].name">
+              </a>
+            </div>
+            <div class="header-cabinet__sign-out">
+              <a href="#">
+                <img src="img/icons/sign-out.svg" alt="sign out">
+              </a>
+            </div>
+          </div>
+          <!-- /.header-cabinet -->
+          <div @click="mobMenuVisible = !mobMenuVisible" class="header-mob-button">
+            <img src="img/icons/line-menu.svg" alt="menu">
+          </div>
+          <!-- header-mob-button -->
+
+          <transition name="slide-fade">
+          <div v-show="mobMenuVisible" class="header-mob">
+            <div class="header-mob__cabinet">
+                <div class="header-cabinet__photo">
+                  <a :href="users[1].photo">
+                    <img :src="users[1].photo" :alt="users[1].name">
+                  </a>
+                </div>
+                <div class="header-cabinet__text">
+                  <div class="header-cabinet__name">{{users[1].name}}</div>
+                  <div class="header-cabinet__email">{{users[1].email}}</div>
+                </div>
+            </div>
+            <!-- /.header-mob-cabinet -->
+            <ul class="header-menu">
+                <li v-for="siteMenuItem of siteMenu">
+                  <a v-bind:href="'#' + siteMenuItem">{{siteMenuItem}}</a>
+                </li>
+            </ul>
+            <!-- /.header-mob-menu -->
+          </div>
+          </transition>
+          <!-- /.header-mob -->
+
+        </div>
+        <!-- /.container -->
+      </header>
+      <!-- /header -->
+
+      <section class="main-section bg-img" style="background: url('img/imgs/banner-bg/banner-bg-2560x676.jpg');">
+        <div class="container">
+          <div class="main-content">
+            <h1 class="main-title">Test assignment for Frontend Developer position</h1>
+            <p class="main-description">
+              We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository. Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck!
+            </p>
+            <a class="background-btn " href="#Sign Up">Sign Up</a>
+          </div>
+          <!-- /.main-content -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.main-section -->
+
+      <section id="About me" class="about_me-section">
+        <h2 class="section-title">Let's get ac quainted</h2>
+        <div class="container">
+          <div class="about_me-img">
+              <img src="img/imgs/man-mobile.svg" alt="">
+          </div>
+          <!-- /.about_me-img -->
+          <div class="about_me-content">
+            <h4 class="little-title">I am cool frontend developer</h4>
+
+            <p class="section-p">
+                When real users have a slow experience on mobile, they're much less likely to find what they are looking for or purchase from you in the future. For many sites this equates to a huge missed opportunity, especially when more than half of visits are abandoned if a mobile page takes over 3 seconds to load. 
+            </p>
+            <p class="section-p"> 
+                Last week, Google Search and Ads teams announced two new speed initiatives to help improve user-experience on the web. 
+            </p>
+
+            <a class="orange-link" href="#Sign Up">Sign Up</a>
+
+          </div>
+          <!-- /.about_me-content -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.get-acquainted-section -->
+
+      <section id="Relationships" class="relationship-section">
+        <h2 class="section-title">About my relationships with web-development</h2>
+        <div class="container">
+          <div class="relationship-item">
+            <div class="relationship-item__img">
+              <img src="img/imgs/html.svg" alt="html">
+            </div>
+            <div class="relationship-item__content">
+              <h4 class="little-title">I'm in love with HTML</h4>
+              
+              <p class="section-p">
+                  Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.
+              </p>
+              <!-- /.section-p -->
+            </div>
+            
+          </div>
+          <!-- /.relationship-item -->
+
+          <div class="relationship-item">
+            <div class="relationship-item__img">
+              <img src="img/imgs/css.svg" alt="css">
+            </div>
+            <div class="relationship-item__content">
+              <h4 class="little-title">CSS is my best friend</h4>
+              
+              <p class="section-p">
+                Cascading Style Sheets (CSS) is a  style sheet language used for describing the presentation 
+                of a document written in a markup language 
+                like HTML.
+              </p>
+              <!-- /.section-p -->
+            </div>
+            
+          </div>
+          <!-- /.relationship-item -->
+
+          <div class="relationship-item">
+            <div class="relationship-item__img">
+              <img src="img/imgs/javascript.svg" alt="javascript">
+            </div>
+            <div class="relationship-item__content">
+              <h4 class="little-title">JavaScript is my passion</h4>
+              
+              <p class="section-p">
+                JavaScript is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.
+              </p>
+              <!-- /.section-p -->
+            </div>
+            
+          </div>
+          <!-- /.relationship-item -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.relationship-section -->
+
+      <section id="Requirements" class="requirements-section bg-img" style="background: url('img/imgs/third-block-bg/third-block-bg-2560x692.jpg');">
+        <h2 class="section-title">General requirements for the test task</h2>
+
+        <div class="container">
+          <div class="requirements-content">
+            <p class="section-p">
+                Users want to find answers to their questions quickly and data shows that people really care about how quickly their pages load. The Search team announced speed would be a ranking signal for desktop searches in 2010 and as of this month (July 2018), page speed will be a ranking factor for mobile searches too.
+            </p>
+            <p class="section-p">
+                If you're a developer working on a site, now is a good time to evaluate your performance using our speed tools. Think about how performance affects the user experience of your pages and consider measuring a variety of real-world user-centric performance metrics.
+            </p>
+            <p class="section-p">
+                Are you shipping too much JavaScript? Too many images? Images and JavaScript are the most significant contributors to the page weight that affect page load time based on data from HTTP Archive and the Chrome User Experience Report - our public dataset for key UX metrics as experienced by Chrome users under real-world conditions.
+            </p>
+
+          </div>
+          <!-- /.requirements-content -->
+
+            <div class="requirements-img">
+                <img src="img/imgs/man-laptop-v1.svg" alt="">
+            </div>
+            <!-- /.requirements-img -->
+
+          </div>
+          <!-- /.container -->
+      </section>
+      <!-- /.requirements-section -->
+
+      <section id="Users" class="user-section">
+        <h2 class="section-title">Our cheerful users</h2>
+        <h4 class="attention-title">Attention! Sorting users by registration date</h4>
+
+        <div class="container">
+
+          <div class="user-wrapper">
+            <div v-for="user in users" class="user-item">
+              <div class="user-item__img">
+                <img :src="user.photo" alt="">
+              </div>
+              <div class="user-item__info">
+                <h4 class="user-item__info-name">{{user.name}}</h4>
+                <span>{{user.position}}</span>
+                <span>{{user.email}}</span>
+                <span>{{user.phone}}</span>
+              </div>
+            </div>
+            <!-- /.user-item -->
+          </div>
+
+          <a class="border-btn" href="#">Show more</a>
+          
+        </div>
+        <!-- /.container -->
+
+      </section>
+      <!-- /.users-section -->
+
+      <section id="Sign Up" class="register-section">
+        <h2 class="section-title">Register to get a work</h2>
+        <h4 class="attention-title">
+          Attention! After successful registration and alert, update the list of users in the block from the top
+        </h4>
+
+        <div class="container">
+          
+          <form class="register-form" action="/" method="GET">
+            <div class="register-form__top">
+              <div class="input-wrapper">
+                <input class="register-form__input" id="name" type="text" required placeholder="&#173;" pattern="[A-Za-zА-Яа-яЁёЇїІі]{2,}">
+                <label for="name">name</label>
+                <span class="input-error">enter the correct name</span>
+              </div>
+
+              <div class="input-wrapper">
+                <input class="register-form__input" id="email" type="email" required placeholder="&#173;">
+                <label for="email">email</label>
+                <span class="input-error">enter the correct email</span>
+              </div>
+
+              <div class="input-wrapper">
+                <input class="register-form__input" id="input-phone" type="text" required placeholder="&#173;">
+                <label for="input-phone">phone</label>
+                <span class="input-error">enter the correct phone</span>
+              </div>
+            </div>
+            <!-- /.register-form__top -->
+            <div class="register-form__bottom">
+              <div class="input-wrapper">
+                  <v-select class="register-form__input" :options="positions"></v-select>
+                <span class="input-error">enter the correct name</span>
+              </div>
+              <div class="input-file-wrapper">
+                <input class="input-file" id="input-file" type="file" accept=".jpg, .jpeg, .png, .svg" required>
+                <label class="label-file" for="input-file">
+                  <div class="label-file__silver">
+                    Upload your photo
+                  </div>
+                  <div class="label-file__orange">
+                    Upload
+                    <img src="img/icons/upload.svg" alt="upload">
+                  </div>
+                </label>
+                <span class="input-file-span">File format jpg up to 5 MB, the minimum size of 70x70px</span>
+
+              </div>
+            </div>
+            <!-- /.register-form__bottom -->
+            <button  class="disable-btn">Sign up</button>
+          </form>
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.register-section -->
+
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo">
+              <a href="/">
+                <img src="img/logo/logo-footer.svg" alt="abz.agency">
+              </a>
+            </div>
+            <!-- /.footer-logo -->
+            <ul class="footer-menu">
+                <li v-for="siteMenuItem of siteMenu">
+                  <a :href="'#' + siteMenuItem">{{siteMenuItem}}</a>
+                </li>
+            </ul>
+            <!-- /.footer-menu -->
+        </div>
+        <!-- /.footer-top -->
+        <hr>
+        <div class="footer-bottom">
+
+          <div class="footer-grid">
+            <ul class="footer-grid__contacts">
+              <li>
+                <a href="mailto:work.of.future@gmail.com">
+                  <img src="img/icons/mail.svg" alt="">
+                  work.of.future@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+38(050)7892498">
+                  <img src="img/icons/phone.svg" alt="">
+                +38 (050) 789 24 98 
+                </a>
+              </li>
+              <li>
+                <a href="tel:+38(095)5560845">
+                  <img src="img/icons/cellphone.svg" alt="">
+                +38 (095) 556 08 45
+              </a>
+              </li>
+
+            </ul>
+            <!-- /.footer-grid__contacts -->
+            <div class="footer-grid__menus">
+              <ul v-for="ul in footerUl" class="footer-grid__ul">
+                <li v-for="li in ul">
+                  <a href="#">{{li}}</a>
+                </li>
+              </ul>
+              <!-- /.footer-grid__ul -->
+            </div>
+            <!-- /.footer-grid__menus -->
+          </div>
+          <!-- /.footer-grid -->
+
+          <div class="footer-links">
+            <div class="footer-copyright">© abz.agency specially for the test task</div>
+            <ul class="footer-socials">
+              <li>
+                <a href="#">
+                  <img src="img/icons/facebook.svg" alt="facebook">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/icons/linkedin.svg" alt="linkedin">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/icons/instagram.svg" alt="instagram">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/icons/twitter.svg" alt="twitter">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/icons/pinterest.svg" alt="pinterest">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.footer-links -->
+          
+        </div>
+        <!-- /.footer-bottom -->
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- /.footer -->
+
+
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/vue-select.js"></script>
+  <script src='js/index.js'></script>
+
+</body>
+</html>
